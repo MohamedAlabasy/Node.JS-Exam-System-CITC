@@ -1,6 +1,6 @@
 import { validationResult } from 'express-validator';
 
-export function validateRequest(request: any) {
+export default function validateRequest(request: any) {
     let errors = validationResult(request);
     if (!errors.isEmpty()) {
         let error = new Error()

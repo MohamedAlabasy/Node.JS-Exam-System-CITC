@@ -1,10 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 
+import validateRequest from '../utilities/validateRequest';
 
 // #=======================================================================================#
 // #			                            login                                          #
 // #=======================================================================================#
 export const login = (request: Request, response: Response, next: NextFunction) => {
+    validateRequest(request)
     response.json({
         status: 1,
         data: 'login'
