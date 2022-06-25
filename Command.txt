@@ -74,7 +74,7 @@ npm i --D @types/jsonwebtoken
 ******
 
 # install auto-increment
-npm i npm i @typegoose/auto-increment --save
+npm i @typegoose/auto-increment --save
 npm i --D @types/
 
 
