@@ -26,27 +26,27 @@ npm i
 ```bash
 ├── src
 │   ├── controllers
-│   │   ├── studentController.ts => `for handel student function`
+│   │   ├── authController.ts => `for handel authentication function`
 │   │   │── .ts => ``
 │   │   └── .ts => ``
 │   │
 │   │
 │   ├── middleware
-│   │   ├── morganMiddleware.ts => `for handel auth function`
-│   │   │── notFoundMiddleware.ts => `for handel auth function`
+│   │   ├── morganMiddleware.ts => `for log url, method and statue of requests`
+│   │   │── notFoundMiddleware.ts => `for not Found Middleware`
 │   │   │── .ts => ``
-│   │   └── errorMiddleware.ts => `for handel auth function`
+│   │   └── errorMiddleware.ts => `for error Middleware`
 │   │
 │   │
 │   ├── models
-│   │   ├── studentSchema.ts => `for handel student Schema`
+│   │   ├── userSchema.ts => `for handel user Schema`
 │   │   │── .ts => ``
 │   │   └── .ts => ``
 │   │
 │   │
 │   ├── routes
 │   │   ├── api
-│   │   │   │── studentRouter.ts => `for handel student route`
+│   │   │   │── authRouter.ts => `for handel authentication route`
 │   │   │   └── .ts => ``
 │   │   └── routes.ts => `import all routes and export it to index`
 │   │
@@ -56,6 +56,10 @@ npm i
 │   │   │   └── reporter.ts
 │   │   ├── indexSpec.ts => `for test endpoint api`
 │   │   └── .ts => ``
+│   │
+│   │
+│   ├── utilities
+│   │   └── validateRequest.ts => `for validate Request`
 │   │
 │   │
 │   └── index.ts => `to run the server`
