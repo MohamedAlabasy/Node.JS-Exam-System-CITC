@@ -4,7 +4,7 @@ import auth from './api/authRouter';
 
 const routes = express.Router()
 
-routes.use('', auth);
+routes.use('/user', auth);
 
 
 
