@@ -41,7 +41,9 @@ npm i --D @types/supertest
 # add dotenv
 npm i dotenv 
 
-
+# add morgan
+npm i -D morgan 
+npm i --D @types/morgan
 
 
 # add body-parser
