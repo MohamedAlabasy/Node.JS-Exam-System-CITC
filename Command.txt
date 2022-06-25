@@ -7,73 +7,73 @@ npm i -D typescript
 npx tsc --init 
 
 
-# add EsLine
+# install EsLine
 npm i -D eslint
 npx eslint --init
 
 
-# add prettier
+# install prettier
 npm i -D prettier
 npm i -D eslint-config-prettier eslint-plugin-prettier 
  
 
-# add jasmine
+# install jasmine
 npm i -D jasmine 
 npm i -D jasmine-spec-reporter
 npm i --D @types/jasmine
 
 
-# add express
+# install express
 npm i express --save
 npm i --D @types/express
 
 
-# add node monitor
+# install node monitor
 npm i -D nodemon
 npm i -D ts-node
 
 
-# add supertest
+# install supertest
 npm i -D supertest 
 npm i --D @types/supertest
 
 
-# add dotenv
+# install dotenv
 npm i dotenv 
 
-# add morgan
+# install morgan
 npm i -D morgan 
 npm i --D @types/morgan
 
 
-# add express-validator
+# install express-validator
 npm i express-validator
 # npm i --D @types/express-validator
 
 
-# add body-parser
+# install body-parser
 npm i body-parser --save
 npm i --D @types/body-parser
 
 
-# add mongoose  
+# install mongoose  
 npm i mongoose --save
 # npm i --D @types/mongoose
 
 
-# add bcryptjs
+# install bcryptjs
 npm i bcryptjs --save
 npm i --D @types/bcryptjs
 
 
-# add jsonwebtoken 
+# install jsonwebtoken 
 npm i jsonwebtoken  --save
 npm i --D @types/jsonwebtoken 
 
 
 ******
 
-# add auto-increment
+# install auto-increment
 npm i npm i @typegoose/auto-increment --save
 npm i --D @types/
 
