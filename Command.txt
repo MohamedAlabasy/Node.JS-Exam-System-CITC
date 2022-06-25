@@ -60,22 +60,23 @@ npm i --D @types/body-parser
 npm i mongoose --save
 # npm i --D @types/mongoose
 
+
+# add bcryptjs
+npm i bcryptjs --save
+npm i --D @types/bcryptjs
+
+
+# add jsonwebtoken 
+npm i jsonwebtoken  --save
+npm i --D @types/jsonwebtoken 
+
+
 ******
 
 # add auto-increment
 npm i npm i @typegoose/auto-increment --save
 npm i --D @types/
 
-
-
-# add bcryptjs
-npm i bcryptjs --save
-npm i --D @types/
-
-
-# add jsonwebtoken 
-npm i jsonwebtoken  --save
-npm i --D @types/jsonwebtoken 
 
 
  
