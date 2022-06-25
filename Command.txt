@@ -33,6 +33,11 @@ npm i -D nodemon
 npm i -D ts-node
 
 
+# add supertest
+npm i -D supertest 
+npm i --D @types/supertest
+
+
 # add body-parser
 npm i body-parser --save
 npm i --D @types/body-parser
