@@ -54,3 +54,24 @@ npm i --D @types/express-validator
 # add body-parser
 npm i body-parser --save
 npm i --D @types/body-parser
+
+******
+
+# add bcryptjs
+npm i bcryptjs --save
+npm i --D @types/
+
+
+# add auto-increment
+npm i npm i @@typegoose/auto-increment --save
+npm i --D @types/
+
+
+# add jsonwebtoken 
+npm i jsonwebtoken  --save
+npm i --D @types/jsonwebtoken 
+
+
+# add mongoose  
+npm i mongoose --save
+npm i --D @types/mongoose 
