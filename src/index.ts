@@ -4,6 +4,8 @@ import body_parser from 'body-parser';
 import morgan from 'morgan';
 
 import logger from './middleware/logger';
+import notFound from './middleware/notFound';
+import error from './middleware/error';
 import routes from './routes/routes';
 
 
@@ -16,6 +18,8 @@ app.listen(process.env.PORT || 8000, () => {
     console.log(`App Run at http://${process.env.HOST}:${process.env.PORT || 8888}`);
 });
 
+
+
 // #=======================================================================================#
 // #			                            body_parse                                     #
 // #=======================================================================================#
@@ -25,29 +29,14 @@ app.use(body_parser.urlencoded({ extended: false }));
 // #			                            router                                         #
 // #=======================================================================================#
 app.use('', logger, routes);
-
 // #=======================================================================================#
 // #			                        not Found middleware                               #
 // #=======================================================================================#
-app.use((request: Request, response: Response, next: NextFunction) => {
-    response.status(404).json({
-        status: 0,
-        message: 'Not Found'
-    })
-});
-
-
-
+app.use(notFound);
 // #=======================================================================================#
 // #			                      error middleware                                     #
 // #=======================================================================================#
-app.use((error: any, request: Request, response: Response, next: NextFunction) => {
-    let status = error.status || 500;
-    response.status(status).json({
-        status: 0,
-        error: error.message + ''
-    })
-});
+app.use(error);
 
 
 export default app;
