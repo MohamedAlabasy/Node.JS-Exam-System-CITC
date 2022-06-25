@@ -1,6 +1,6 @@
 import express from 'express';
 
-import auth from './api/authRouter';
+import auth from './api/studentRouter';
 
 const routes = express.Router()
 

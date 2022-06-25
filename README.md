@@ -26,7 +26,7 @@ npm i
 ```bash
 ├── src
 │   ├── controllers
-│   │   ├── authController.ts => `for handel auth function`
+│   │   ├── studentController.ts => `for handel student function`
 │   │   │── .ts => ``
 │   │   └── .ts => ``
 │   │
@@ -38,9 +38,15 @@ npm i
 │   │   └── errorMiddleware.ts => `for handel auth function`
 │   │
 │   │
+│   ├── models
+│   │   ├── studentSchema.ts => `for handel student Schema`
+│   │   │── .ts => ``
+│   │   └── .ts => ``
+│   │
+│   │
 │   ├── routes
 │   │   ├── api
-│   │   │   │── authRouter.ts => `for handel auth route`
+│   │   │   │── studentRouter.ts => `for handel student route`
 │   │   │   └── .ts => ``
 │   │   └── routes.ts => `import all routes and export it to index`
 │   │
