@@ -1,22 +1,23 @@
 import express, { Request, Response, NextFunction } from 'express';
 import 'dotenv/config'
+import body_parser from 'body-parser';
 
 import logger from './middleware/logger';
 
 const app = express();
-const PORT = 8000;
-
-console.log(process.env) // remove this after you've confirmed it working
-
 
 // #=======================================================================================#
 // #			                          run server                                       #
 // #=======================================================================================#
-app.listen(PORT || 8000, () => {
-    console.log(`App Run at http://localhost:${PORT || 8000}`);
+app.listen(process.env.PORT || 8000, () => {
+    console.log(`App Run at http://${process.env.HOST}:${process.env.PORT || 8888}`);
 });
 
-
+// #=======================================================================================#
+// #			                            body_parse                                     #
+// #=======================================================================================#
+app.use(body_parser.json());
+app.use(body_parser.urlencoded({ extended: false }));
 // #=======================================================================================#
 // #			                            router                                         #
 // #=======================================================================================#
