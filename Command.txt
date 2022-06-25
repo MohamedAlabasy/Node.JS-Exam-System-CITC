@@ -58,7 +58,7 @@ npm i --D @types/body-parser
 
 # add mongoose  
 npm i mongoose --save
-npm i --D @types/mongoose
+# npm i --D @types/mongoose
 
 ******
 
