@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 // import { AutoIncrementID } from '@typegoose/auto-increment';
 
 const schema = new mongoose.Schema({
-    _id: Number,
+    // _id: ObjectId,
     national_id: { type: String, required: true, trim: true, },
     bench_number: { type: String, required: true, trim: true },
     college_email: { type: String, required: true, unique: true, lowercase: true, trim: true, },
