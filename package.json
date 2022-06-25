@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MohamedAlabasy/Node.JS-Exam-System-CITC#readme",
   "devDependencies": {
+    "eslint": "^8.18.0",
     "typescript": "^4.7.4"
   }
 }
