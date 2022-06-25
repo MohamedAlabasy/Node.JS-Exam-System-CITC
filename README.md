@@ -42,7 +42,7 @@ npm i
 │   │   ├── api
 │   │   │   │── authRouter.ts => `for handel auth route`
 │   │   │   └── .ts => ``
-│   │   └── routes.ts => `import all routes and export it to main index`
+│   │   └── routes.ts => `import all routes and export it to index`
 │   │
 │   │
 │   ├── tests  => `for testing purposes`
