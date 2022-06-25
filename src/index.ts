@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import 'dotenv/config'
 import body_parser from 'body-parser';
+import morgan from 'morgan';
 
 import logger from './middleware/logger';
 import routes from './routes/routes';
