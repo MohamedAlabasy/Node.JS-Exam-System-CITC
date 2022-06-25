@@ -19,7 +19,7 @@ git clone https://github.com/MohamedAlabasy/Node.JS-Exam-System-CITC.git
 npm i
 ```
 
-<h3 align="center">To help you understand the project :</h3>
+<h3 align="center">To help you understand the project</h3>
 
 ## Folder Structure
 
