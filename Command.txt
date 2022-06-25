@@ -46,6 +46,9 @@ npm i -D morgan
 npm i --D @types/morgan
 
 
+# add express-validator
+npm i express-validator
+npm i --D @types/express-validator
 
 
 # add body-parser
