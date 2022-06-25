@@ -10,4 +10,4 @@ const schema = new mongoose.Schema({
 
 schema.plugin(AutoIncrementID, [{ filed: '_id' }]);
 
-module.exports = mongoose.model('courses', schema)
+export default mongoose.model('courses', schema)
