@@ -4,6 +4,12 @@
   "description": "<h1 align=\"center\">Node.JS Exam System CITC</h1>",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "lint:f": "eslint src/**/*.ts --fix",
+    "jasmine": "jasmine",
+    "tests": "npm run build && npm run jasmine",
+    "start": "nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
