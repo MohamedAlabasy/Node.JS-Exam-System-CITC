@@ -38,6 +38,10 @@ npm i -D supertest
 npm i --D @types/supertest
 
 
+# add dotenv
+npm i dotenv 
+
+
 # add body-parser
 npm i body-parser --save
 npm i --D @types/body-parser
