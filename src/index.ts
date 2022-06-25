@@ -3,6 +3,8 @@ import 'dotenv/config'
 import body_parser from 'body-parser';
 
 import logger from './middleware/logger';
+import routes from './routes/routes';
+
 
 const app = express();
 
@@ -21,8 +23,7 @@ app.use(body_parser.urlencoded({ extended: false }));
 // #=======================================================================================#
 // #			                            router                                         #
 // #=======================================================================================#
-
-
+app.use('', logger, routes);
 
 // #=======================================================================================#
 // #			                        not Found middleware                               #
