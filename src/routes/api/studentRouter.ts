@@ -1,4 +1,3 @@
-// import { Router } from 'express'
 import { Router } from 'express';
 import { login, register, getUserData, deleteUser, logout } from '../../controllers/studentController';
 
