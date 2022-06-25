@@ -1,11 +1,11 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import 'dotenv/config'
 import body_parser from 'body-parser';
-import morgan from 'morgan';
 
-import logger from './middleware/logger';
-import notFound from './middleware/notFound';
-import error from './middleware/error';
+import morganMiddleware from './middleware/morganMiddleware';
+import notFoundMiddleware from './middleware/notFoundMiddleware';
+import errorMiddleware from './middleware/errorMiddleware';
+
 import routes from './routes/routes';
 
 
@@ -19,7 +19,6 @@ app.listen(process.env.PORT || 8000, () => {
 });
 
 
-
 // #=======================================================================================#
 // #			                            body_parse                                     #
 // #=======================================================================================#
@@ -28,15 +27,15 @@ app.use(body_parser.urlencoded({ extended: false }));
 // #=======================================================================================#
 // #			                            router                                         #
 // #=======================================================================================#
-app.use('', logger, routes);
+app.use('', morganMiddleware, routes);
 // #=======================================================================================#
 // #			                        not Found middleware                               #
 // #=======================================================================================#
-app.use(notFound);
+app.use(notFoundMiddleware);
 // #=======================================================================================#
-// #			                      error middleware                                     #
+// #			                           middleware                                      #
 // #=======================================================================================#
-app.use(error);
+app.use(errorMiddleware);
 
 
 export default app;
