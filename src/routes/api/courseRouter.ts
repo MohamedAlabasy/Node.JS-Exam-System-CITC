@@ -11,7 +11,7 @@ const course: Router = Router()
 course.route('')
     .post(checkCourseData(), createCourse)
     .get(checkTokens, getAllCourse)
-    .put(checkID(), checkCourseData(), updateCourse)
+    .patch(checkID(), checkCourseData(), updateCourse)
     .delete(checkTokens, checkID(), deleteCourse)
 
 // #=======================================================================================#

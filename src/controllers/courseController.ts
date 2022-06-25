@@ -23,7 +23,7 @@ export const createCourse = (request: Request, response: Response, next: NextFun
                     _id: data._id,
                     name: data.name,
                     number_characters: data.number_characters,
-                    teacher: data.teacher,
+                    teacher_id: data.teacher,
                 },
             })
         })
@@ -39,7 +39,7 @@ export const getAllCourse = (request: Request, response: Response, next: NextFun
     Course.find({}).populate({ path: 'teacher', select: unreturnedData }).select(`${unreturnedData}`)
         .then((data) => {
             if (data.length === 0) {
-                throw new Error('No Comment to show')
+                throw new Error('No course to show')
             } else {
                 response.status(200).json({
                     status: 1,
@@ -63,6 +63,7 @@ export const updateCourse = (request: Request, response: Response, next: NextFun
                 throw new Error('Course not found');
             }
             courseData.name = request.body.name
+            courseData.number_characters = request.body.number_characters
             return courseData.save()
         }).then(saveData => {
             response.status(200).json({
