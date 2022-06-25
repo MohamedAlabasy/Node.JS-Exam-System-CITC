@@ -13,4 +13,4 @@ const schema = new mongoose.Schema({
 
 schema.plugin(AutoIncrementID, [{ filed: '_id' }]);
 
-module.exports = mongoose.model('users', schema)
+export default mongoose.model('users', schema)
