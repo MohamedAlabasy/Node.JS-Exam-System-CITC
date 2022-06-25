@@ -3,13 +3,14 @@ import { AutoIncrementID } from '@typegoose/auto-increment';
 
 const schema = new mongoose.Schema({
     _id: Number,
+    email: { type: String, required: true, unique: true, lowercase: true, trim: true },
     national_id: { type: String, required: true, unique: true, trim: true, },
-    bench_number: { type: String, required: true, unique: true, trim: true },
-    college_email: { type: String, required: true, unique: true, lowercase: true, trim: true },
+    identifier: { type: String, required: true, unique: true, trim: true },
     password: { type: String, required: true, select: false, trim: true },
-    token: { type: String, required: false, default: null, select: false }
+    type: { type: String, enum: ['admin', 'teacher', 'student'], default: 'student' },
+    token: { type: String, required: false, default: null, select: false },
 }, { timestamps: true });
 
 schema.plugin(AutoIncrementID, [{ filed: '_id' }]);
 
-module.exports = mongoose.model('students', schema)
+module.exports = mongoose.model('users', schema)
