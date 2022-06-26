@@ -32,7 +32,7 @@ function checkCourseData() {
             .custom(name => {
                 return Course.findOne({ name: name })
                     .then(nameData => {
-                        if (nameData) {
+                        if (nameData && nameData.name != name) {
                             return Promise.reject('Course name already exit');
                         }
                     });

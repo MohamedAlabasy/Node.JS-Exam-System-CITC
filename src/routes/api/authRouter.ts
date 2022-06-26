@@ -13,7 +13,7 @@ auth.route('')
 
 auth.post('/login', checkEmail(), login);
 auth.post('/register', checkUserData(), register);
-auth.post('/logout',checkTokens, checkID(), logout);
+auth.post('/logout', checkTokens, checkID(), logout);
 
 // #=======================================================================================#
 // #			                         check function                                    #
@@ -37,7 +37,7 @@ function checkUserData() {
             .custom((userEmail: String) => {
                 return User.findOne({ email: userEmail })
                     .then((data) => {
-                        if (data)
+                        if (data && data.email != userEmail)
                             return Promise.reject('Email already exit')
                     })
             }),
@@ -45,10 +45,10 @@ function checkUserData() {
         check('national_id')
             .isInt().withMessage('national_id must be number')
             .isLength({ min: 14, max: 14 }).withMessage('national_id must be 14 number')
-            .custom(nationalID => {
-                return User.findOne({ national_id: nationalID })
+            .custom(national_id => {
+                return User.findOne({ national_id: national_id })
                     .then(nationalIDData => {
-                        if (nationalIDData) {
+                        if (nationalIDData && nationalIDData.national_id != national_id) {
                             return Promise.reject('tag national id already exit');
                         }
                     });
@@ -60,14 +60,14 @@ function checkUserData() {
             .custom(identifier => {
                 return User.findOne({ identifier: identifier })
                     .then(identifierData => {
-                        if (identifierData) {
+                        if (identifierData && identifierData.identifier != identifier) {
                             return Promise.reject('tag identifier already exit');
                         }
                     });
             }),
 
         body('password').isStrongPassword().withMessage('Password Must contain at least 1 characters(upper and lower),numbers,special characters'),
-        body('type').isIn(['admin', 'teacher', 'student']).withMessage('type must be admin or teacher or student'),
+        body('type').isAlpha().withMessage('invalid type').isIn(['admin', 'teacher', 'student']).withMessage('type must be admin or teacher or student'),
     ]
 }
 

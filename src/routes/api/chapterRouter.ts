@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { createChapter, getAllChapters, getChapterByID, updateChapter, deleteChapter } from '../../controllers/chapterController';
 import { body, check } from 'express-validator';
 
-import User from '../../models/userSchema';
+import Course from '../../models/courseSchema';
 import Chapter from '../../models/chapterSchema';
 import checkTokens from '../../utilities/checkTokens';
 
@@ -32,14 +32,14 @@ function checkCourseData() {
             .custom(name => {
                 return Chapter.findOne({ name: name })
                     .then(nameData => {
-                        if (nameData) {
+                        if (nameData && nameData.name != name) {
                             return Promise.reject('chapter name already exit');
                         }
                     });
             }),
 
         check('course').custom(courseID => {
-            return User.findById(courseID)
+            return Course.findById(courseID)
                 .then(courseData => {
                     if (!courseData) {
                         return Promise.reject('course ID Not Found');

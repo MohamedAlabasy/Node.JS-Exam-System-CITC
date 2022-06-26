@@ -8,9 +8,9 @@ const unreturnedData = "-createdAt -updatedAt -__v";
 // #=======================================================================================#
 // #			                                Create                                     #
 // #=======================================================================================#
-export const createChapter = (request: Request, response: Response, next: NextFunction) => {
+export const createQuestion = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request);
-    let chapter = new Chapter({
+    let question = new Question({
         question: request.body.question,
         choice_1: request.body.choice_1,
         choice_2: request.body.choice_2,
@@ -19,7 +19,7 @@ export const createChapter = (request: Request, response: Response, next: NextFu
         is_difficult: request.body.is_difficult,
         chapter: request.body.chapter,
     })
-    chapter.save()
+    question.save()
         .then((data: any) => {
             response.status(200).json({
                 status: 1,
@@ -40,14 +40,14 @@ export const createChapter = (request: Request, response: Response, next: NextFu
         })
 }
 // #=======================================================================================#
-// #			                       get chapter by ID                                  #
+// #			                       get Question by ID                                  #
 // #=======================================================================================#
-export const getChapterByID = (request: Request, response: Response, next: NextFunction) => {
+export const getQuestionByID = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request);
-    Chapter.findById(request.body._id).populate({ path: 'course', select: unreturnedData }).select(unreturnedData)
+    Question.findById(request.body._id).populate({ path: 'chapter', select: unreturnedData }).select(unreturnedData)
         .then(data => {
             if (data === null) {
-                throw new Error(`No Chapter with this _id = ${request.body._id}`)
+                throw new Error(`No Question with this _id = ${request.body._id}`)
             } else {
                 response.status(200).json({
                     status: 1,
@@ -60,14 +60,14 @@ export const getChapterByID = (request: Request, response: Response, next: NextF
         })
 }
 // #=======================================================================================#
-// #			                         get All Course                                    #
+// #			                         get All Question                                    #
 // #=======================================================================================#
-export const getAllChapters = (request: Request, response: Response, next: NextFunction) => {
+export const getAllQuestion = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request)
-    Chapter.find({}).populate({ path: 'course', select: unreturnedData }).select(`${unreturnedData}`)
+    Question.find({}).populate({ path: 'chapter', select: unreturnedData }).select(`${unreturnedData}`)
         .then((data) => {
             if (data.length === 0) {
-                throw new Error('No chapters to show')
+                throw new Error('No Question to show')
             } else {
                 response.status(200).json({
                     status: 1,
@@ -83,16 +83,21 @@ export const getAllChapters = (request: Request, response: Response, next: NextF
 // #=======================================================================================#
 // #			                            update                                         #
 // #=======================================================================================#
-export const updateChapter = (request: Request, response: Response, next: NextFunction) => {
+export const updateQuestion = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request)
-    Chapter.findById(request.body._id).populate({ path: 'course', select: unreturnedData }).select(`${unreturnedData} -book`)
-        .then(chapterData => {
-            if (chapterData === null) {
-                throw new Error('chapter not found');
+    Question.findById(request.body._id).populate({ path: 'chapter', select: unreturnedData }).select(`${unreturnedData} -book`)
+        .then(questionData => {
+            if (questionData === null) {
+                throw new Error('Question not found');
             }
-            chapterData.name = request.body.name
-            chapterData.course = request.body.course
-            return chapterData.save()
+            questionData.question = request.body.question
+            questionData.choice_1 = request.body.choice_1
+            questionData.choice_2 = request.body.choice_2
+            questionData.choice_3 = request.body.choice_3
+            questionData.correct_answer = request.body.correct_answer
+            questionData.is_difficult = request.body.is_difficult
+            questionData.chapter = request.body.chapter
+            return questionData.save()
         }).then(saveData => {
             response.status(200).json({
                 status: 1,
@@ -107,16 +112,16 @@ export const updateChapter = (request: Request, response: Response, next: NextFu
 // #=======================================================================================#
 // #			                            delete                                         #
 // #=======================================================================================#
-export const deleteChapter = (request: Request, response: Response, next: NextFunction) => {
+export const deleteQuestion = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request)
-    Chapter.findByIdAndDelete(request.body._id)
+    Question.findByIdAndDelete(request.body._id)
         .then((data) => {
             if (data == null) {
-                throw new Error(`No Chapter with this id = ${request.body._id}`)
+                throw new Error(`No Question with this _id = ${request.body._id}`)
             } else {
                 response.status(200).json({
                     status: 1,
-                    message: 'Course deleted successfully',
+                    message: 'Question deleted successfully',
                 });
             }
         })

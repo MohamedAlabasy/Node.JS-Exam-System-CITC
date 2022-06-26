@@ -7,8 +7,8 @@ const schema = new mongoose.Schema({
     choice_1: { type: String, required: true, trim: true },
     choice_2: { type: String, required: true, trim: true },
     choice_3: { type: String, required: true, trim: true },
-    correct_answer: { type: String, required: true, trim: true },
-    is_difficult: { type: Boolean, required: true },
+    correct_answer: { type: Number, enum: [1, 2, 3], required: true, trim: true },
+    is_difficult: { type: Boolean, required: true ,lowercase:true},
     chapter: { type: Number, ref: 'chapters' },
 }, { timestamps: true });
 
