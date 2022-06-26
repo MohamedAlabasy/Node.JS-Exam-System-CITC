@@ -1,29 +1,29 @@
 import { Request, Response, NextFunction } from 'express';
 
 import validateRequest from '../utilities/validateRequest';
-import Course from '../models/courseSchema';
+import StudentExams from '../models/studentExamSchema';
 
 const unreturnedData = "-createdAt -updatedAt -__v";
 
 // #=======================================================================================#
 // #			                                Create                                     #
 // #=======================================================================================#
-export const createCourse = (request: Request, response: Response, next: NextFunction) => {
+export const createStudentExams = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request);
-    let course = new Course({
-        name: request.body.name,
-        number_characters: request.body.number_characters,
-        teacher: request.body.teacher,
+    let studentExams = new StudentExams({
+        degree: request.body.degree,
+        student: request.body.student,
+        course: request.body.course,
     })
-    course.save()
+    studentExams.save()
         .then((data: any) => {
             response.status(200).json({
                 status: 1,
                 data: {
                     _id: data._id,
-                    name: data.name,
-                    number_characters: data.number_characters,
-                    teacher_id: data.teacher,
+                    degree: data.degree,
+                    student: data.student,
+                    course: data.course,
                 },
             })
         })
@@ -32,14 +32,14 @@ export const createCourse = (request: Request, response: Response, next: NextFun
         })
 }
 // #=======================================================================================#
-// #			                       get Course by ID                                  #
+// #			                       get StudentExams by ID                              #
 // #=======================================================================================#
-export const getCourseByID = (request: Request, response: Response, next: NextFunction) => {
+export const getStudentExamByID = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request);
-    Course.findById(request.body._id).populate({path: 'teacher', select: unreturnedData}).select(unreturnedData)
+    StudentExams.findById(request.body._id).populate({ path: 'course student', select: unreturnedData }).select(unreturnedData)
         .then(data => {
             if (data === null) {
-                throw new Error(`No Course with this _id = ${request.body._id}`)
+                throw new Error(`No Student Exam with this _id = ${request.body._id}`)
             } else {
                 response.status(200).json({
                     status: 1,
@@ -52,14 +52,14 @@ export const getCourseByID = (request: Request, response: Response, next: NextFu
         })
 }
 // #=======================================================================================#
-// #			                         get All Course                                    #
+// #			                     get All StudentExams                                  #
 // #=======================================================================================#
-export const getAllCourse = (request: Request, response: Response, next: NextFunction) => {
+export const getAllStudentExams = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request)
-    Course.find({}).populate({ path: 'teacher', select: unreturnedData }).select(`${unreturnedData}`)
+    StudentExams.find({}).populate({ path: 'student course', select: unreturnedData }).select(`${unreturnedData}`)
         .then((data) => {
             if (data.length === 0) {
-                throw new Error('No course to show')
+                throw new Error('No Student Exams to show')
             } else {
                 response.status(200).json({
                     status: 1,
@@ -75,15 +75,16 @@ export const getAllCourse = (request: Request, response: Response, next: NextFun
 // #=======================================================================================#
 // #			                            update                                         #
 // #=======================================================================================#
-export const updateCourse = (request: Request, response: Response, next: NextFunction) => {
+export const updateStudentExam = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request)
-    Course.findById(request.body._id).populate({ path: 'teacher', select: unreturnedData }).select(`${unreturnedData} -book`)
+    StudentExams.findById(request.body._id).populate({ path: 'student course', select: unreturnedData }).select(`${unreturnedData} -book`)
         .then(courseData => {
             if (courseData === null) {
-                throw new Error('Course not found');
+                throw new Error('Student Exam not found');
             }
-            courseData.name = request.body.name
-            courseData.number_characters = request.body.number_characters
+            courseData.degree = request.body.degree
+            courseData.student = request.body.student
+            courseData.course = request.body.course
             return courseData.save()
         }).then(saveData => {
             response.status(200).json({
@@ -99,16 +100,16 @@ export const updateCourse = (request: Request, response: Response, next: NextFun
 // #=======================================================================================#
 // #			                            delete                                         #
 // #=======================================================================================#
-export const deleteCourse = (request: Request, response: Response, next: NextFunction) => {
+export const deleteStudentExam = (request: Request, response: Response, next: NextFunction) => {
     validateRequest(request)
-    Course.findByIdAndDelete(request.body._id)
+    StudentExams.findByIdAndDelete(request.body._id)
         .then((data) => {
             if (data == null) {
-                throw new Error(`No course with this id = ${request.body._id}`)
+                throw new Error(`No Student Exam with this _id = ${request.body._id}`)
             } else {
                 response.status(200).json({
                     status: 1,
-                    message: 'Course deleted successfully',
+                    message: 'Student Exam deleted successfully',
                 });
             }
         })

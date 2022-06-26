@@ -3,11 +3,11 @@ import { AutoIncrementID } from '@typegoose/auto-increment';
 
 const schema = new mongoose.Schema({
     _id: Number,
-    degree: { type: String, required: true, trim: true },
-    user: { type: Number, ref: 'users' },
+    degree: { type: Number, required: true, trim: true },
+    student: { type: Number, ref: 'users' },
     course: { type: Number, ref: 'courses' },
 }, { timestamps: true });
 
 schema.plugin(AutoIncrementID, [{ filed: '_id' }]);
 
- mongoose.model('student_exams', schema)
+export default mongoose.model('student_exams', schema)
