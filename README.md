@@ -57,7 +57,7 @@ npm i
 │   │   └── routes.ts => `import all routes and export it to index`
 │   │
 │   │
-│   ├── tests  => `for testing purposes`
+│   ├── tests => `for testing purposes`
 │   │   ├── helpers
 │   │   │   └── reporter.ts
 │   │   ├── indexSpec.ts => `for test endpoint api`
@@ -67,6 +67,11 @@ npm i
 │   ├── utilities
 │   │   │── checkTokens.ts => `for Request check Tokens`
 │   │   └── validateRequest.ts => `for validate Request`
+│   │
+│   │
+│   ├── views => `for handel admin views`
+│   │   │── index.ejs => ``
+│   │   └── .ejs => ``
 │   │
 │   │
 │   └── index.ts => `to run the server`
@@ -85,7 +90,7 @@ npm i
 node run start
 ```
 
-`Step 4` : Open the browser and click : [http://localhost:8080](http://localhost:8080)
+`Step 4` : Open the browser for admin control page and click : [http://localhost:8080](http://localhost:8080)
 
 <hr>
 

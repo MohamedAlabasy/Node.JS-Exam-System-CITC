@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_DB as string)
             console.log(`App Run at http://${process.env.HOST}:${process.env.PORT || 8888}`);
         });
     }).catch((error) => {
-        console.log('DB not connected: ' + error);
+        console.log('DB not connected : ' + error);
     });
 // #=======================================================================================#
 // #			                         render template                                   #
