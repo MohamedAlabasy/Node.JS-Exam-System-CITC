@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createCourse, getAllCourse, updateCourse, deleteCourse } from '../../controllers/courseController';
+import { createCourse, getAllCourse, updateCourse, deleteCourse, getCourseByID } from '../../controllers/courseController';
 import { body, check } from 'express-validator';
 
 import Course from '../../models/courseSchema';
@@ -10,17 +10,18 @@ const course: Router = Router()
 
 course.route('')
     .post(checkCourseData(), createCourse)
-    .get(checkTokens, getAllCourse)
+    .get(checkTokens, checkID(), getCourseByID)
     .patch(checkID(), checkCourseData(), updateCourse)
     .delete(checkTokens, checkID(), deleteCourse)
 
+course.get('/all', checkTokens, getAllCourse);
 // #=======================================================================================#
 // #			                         check function                                    #
 // #=======================================================================================#
 
 function checkID() {
     return [
-        body("_id").isInt().withMessage('invalid Comment ID')
+        body("_id").isInt().withMessage('invalid course ID')
     ]
 }
 

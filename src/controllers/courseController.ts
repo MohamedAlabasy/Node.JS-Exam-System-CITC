@@ -32,6 +32,26 @@ export const createCourse = (request: Request, response: Response, next: NextFun
         })
 }
 // #=======================================================================================#
+// #			                       get Course by ID                                  #
+// #=======================================================================================#
+export const getCourseByID = (request: Request, response: Response, next: NextFunction) => {
+    validateRequest(request);
+    Course.findById(request.body._id).populate({path: 'teacher', select: unreturnedData}).select(unreturnedData)
+        .then(data => {
+            if (data === null) {
+                throw new Error(`No Course with this _id = ${request.body._id}`)
+            } else {
+                response.status(200).json({
+                    status: 1,
+                    data: data
+                });
+            }
+        })
+        .catch((error) => {
+            next(error);
+        })
+}
+// #=======================================================================================#
 // #			                         get All Course                                    #
 // #=======================================================================================#
 export const getAllCourse = (request: Request, response: Response, next: NextFunction) => {
