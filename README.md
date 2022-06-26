@@ -2,7 +2,7 @@
 
 ## Description:
 
-The objective of the system is to design an exam for a course. The course is specified by its name, and the number of its chapters. Each question has 3 choices one of which is the correct answer. Also, the question has two parameters its difficulty: difficult or simple, and its objective: reminding, understanding, and creativity.12 Questions must be assigned to every chapter. All types of questions must be included equally.
+The objective of the system is to design an exam for a course. The course is specified by its name, and the number of its chapters. Each question has 3 choices one of which is the correct answer. Also, the question has two parameters its difficulty: difficult or simple, and its objective: reminding, understanding, and creativity 12 Questions must be assigned to every chapter. All types of questions must be included equally.
 
 ## To run this project
 
