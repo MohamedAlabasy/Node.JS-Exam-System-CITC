@@ -1,8 +1,10 @@
+user (-D) for (--save-dev)
+
 # initialize the project
 npm init -y 
 
 
-# install TS => user (-D) for (--save-dev)
+# install TS 
 npm i -D typescript
 npx tsc --init 
 
