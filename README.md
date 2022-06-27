@@ -73,11 +73,6 @@ npm i
 │   │   └── validateRequest.ts => `for validate Request`
 │   │
 │   │
-│   ├── views => `for handel admin views`
-│   │   │── index.ejs => ``
-│   │   └── .ejs => ``
-│   │
-│   │
 │   └── index.ts => `to run the server`
 └──
 ```
