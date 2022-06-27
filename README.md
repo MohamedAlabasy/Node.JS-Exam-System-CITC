@@ -50,11 +50,13 @@ npm i
 │   │
 │   │
 │   ├── routes
+│   │   ├── admin
+│   │   │   └── adminRouter.ts => `for handel admin route`
 │   │   ├── api
 │   │   │   │── authRouter.ts => `for handel authentication route`
 │   │   │   │── chapterRouter.ts => `for handel chapter route`
 │   │   │   │── courseRouter.ts => `for handel course route`
-│   │   │   └── questionRouter.ts => `for handel question route`
+│   │   │   │── questionRouter.ts => `for handel question route`
 │   │   │   └── studentExamRouter.ts => `for handel student exam route`
 │   │   └── routes.ts => `import all routes and export it to index`
 │   │
