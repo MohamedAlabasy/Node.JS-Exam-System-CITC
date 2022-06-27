@@ -48,7 +48,6 @@ npm i --D @types/morgan
 
 # install express-validator
 npm i express-validator
-# npm i --D @types/express-validator
 
 
 # install body-parser
@@ -58,7 +57,6 @@ npm i --D @types/body-parser
 
 # install mongoose  
 npm i mongoose --save
-# npm i --D @types/mongoose
 
 
 # install bcryptjs
@@ -73,8 +71,15 @@ npm i --D @types/jsonwebtoken
 
 # install auto-increment
 npm i @typegoose/auto-increment --save
-#npm i --D @types/@typegoose/auto-increment
 
+
+# install admin-bro
+npm i admin-bro admin-bro-expressjs
+npm i admin-bro-mongoose
+
+
+# install ejs
+npm i ejs --save
 
 
  
