@@ -6,23 +6,23 @@ const AdminBroMongoose = require('admin-bro-mongoose')
 import mongoose from 'mongoose'
 import User from '../../models/userSchema';
 
-
-AdminBro.registerAdapter(AdminBroMongoose)
+AdminBro.registerAdapter(AdminBroMongoose);
 
 const adminBro = new AdminBro({
     databases: [mongoose],
     rootPath: '/admin',
     branding: {
-        logo: 'https://media-exp1.licdn.com/dms/image/C4E03AQGff53_8W8prA/profile-displayphoto-shrink_200_200/0/1616316754399?e=1657152000&v=beta&t=0HQqUUI7EPruiOYvJEBX1KcJ_YH9OKS-NIMWdiBWKpc',
+        favicon: 'https://media-exp2.licdn.com/dms/image/C4E03AQGff53_8W8prA/profile-displayphoto-shrink_800_800/0/1616316754399?e=1661990400&v=beta&t=AiP8xcN_tynyvSNQxq9jua-lNdjN7GtfdvKAiHlIguQ',
+        logo: 'https://media-exp2.licdn.com/dms/image/C4E03AQGff53_8W8prA/profile-displayphoto-shrink_800_800/0/1616316754399?e=1661990400&v=beta&t=AiP8xcN_tynyvSNQxq9jua-lNdjN7GtfdvKAiHlIguQ',
         companyName: 'CITC',
+        softwareBrothers: false,
     },
+
     resources: [{
         resource: User,
-
         options: {
             parent: {
-                name: 'Admin Accepts',
-                icon: 'fas fa-cogs',
+                name: 'user data',
             },
             properties: {
                 token: {
