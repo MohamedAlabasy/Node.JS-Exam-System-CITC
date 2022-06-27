@@ -64,8 +64,7 @@ npm i
 │   ├── tests => `for testing purposes`
 │   │   ├── helpers
 │   │   │   └── reporter.ts
-│   │   ├── indexSpec.ts => `for test endpoint api`
-│   │   └── .ts => ``
+│   │   └── indexSpec.ts => `for test endpoint api`
 │   │
 │   │
 │   ├── utilities
