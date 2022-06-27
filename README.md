@@ -90,7 +90,7 @@ npm i
 node run start
 ```
 
-`Step 4` : Open the browser for admin control page and click : [http://localhost:8080](http://localhost:8080)
+`Step 4` : Open the browser for admin control page and click : [http://localhost:8080/admin](http://localhost:8080/admin)
 
 <hr>
 

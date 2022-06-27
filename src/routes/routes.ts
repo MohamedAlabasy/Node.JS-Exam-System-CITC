@@ -6,7 +6,6 @@ import chapter from './api/chapterRouter';
 import question from './api/questionRouter';
 import studentExam from './api/studentExamRouter';
 
-import admin from './template/adminRouter';
 
 const routes = express.Router()
 
@@ -15,8 +14,6 @@ routes.use('/course', course);
 routes.use('/chapter', chapter);
 routes.use('/question', question);
 routes.use('/exam', studentExam);
-
-routes.use('', admin);
 
 
 export default routes;
