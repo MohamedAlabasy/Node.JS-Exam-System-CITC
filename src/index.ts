@@ -16,17 +16,17 @@ const app = express();
 // #			                        connect mongoose                                   #
 // #=======================================================================================#
 mongoose.connect(process.env.MONGO_DB as string)
-    .then((data) => {
+    .then( _=> {
         console.log('mongoDB connected on port 27017');
         // run server
         app.listen(process.env.PORT || 8888, () => {
-            console.log(`App Run at http://${process.env.HOST}:${process.env.PORT || 8888}/admin`);
+            console.log(`App Run to access admin dashboard http://${process.env.HOST}:${process.env.PORT || 8888}/admin`);
         });
     }).catch((error) => {
         console.log('DB not connected : ' + error);
     });
 // #=======================================================================================#
-// #			                         admin controls                                    #
+// #			                         admin Router                                      #
 // #=======================================================================================# 
 app.use('/admin', morganMiddleware, adminRouter);
 // #=======================================================================================#
