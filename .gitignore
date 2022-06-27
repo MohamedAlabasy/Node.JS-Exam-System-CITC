@@ -135,7 +135,7 @@ dist
 *.jpeg
 
 # adminbro 
-# .adminbro
+.adminbro
 
 # except
 !background.jpg
