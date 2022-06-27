@@ -1,6 +1,6 @@
 <h1 align="center">Node.JS Exam System CITC</h1>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/93389016/175957532-5cddb67a-0c12-46dc-af86-9d19a39a8bb6.png" alt="Build Status">
+   <img src="https://user-images.githubusercontent.com/93389016/175972048-ee51e43d-2a19-47fb-9ce6-50e2941d2ddb.png" alt="Build Status">
 
 ## Description:
 
