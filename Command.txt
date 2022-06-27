@@ -74,8 +74,8 @@ npm i @typegoose/auto-increment --save
 
 
 # install admin-bro
-npm i admin-bro admin-bro-expressjs
-npm i admin-bro-mongoose
+npm i admin-bro admin-bro-expressjs --save
+npm i admin-bro-mongoose --save
 
 
 # install ejs
