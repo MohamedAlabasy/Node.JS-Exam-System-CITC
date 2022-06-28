@@ -90,6 +90,8 @@ node run start
 
 `Step 4` : Open the browser for admin control page and click : [http://localhost:8080/admin](http://localhost:8080/admin)
 
+`Step 5` : Open [postman](https://www.postman.com/downloads/) and import : [Database_collation](https://github.com/MohamedAlabasy/Node.JS-Exam-System-CITC/blob/main/Database_collation.json) You will find it in the project file.
+
 <hr>
 
 To run eslint to check error
