@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
     email: { type: String, required: true, unique: true, lowercase: true, trim: true },
     national_id: { type: String, required: true, unique: true, trim: true, },
     identifier: { type: String, required: true, unique: true, trim: true },
-    password: { type: String, required: true, select: false, trim: true },
+    password: { type: String, select: false, trim: true },
     type: { type: String, enum: ['admin', 'teacher', 'student'], default: 'student' },
     token: { type: String, required: false, default: null, select: false },
 }, { timestamps: true });
