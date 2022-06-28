@@ -117,3 +117,6 @@ To run the JS code
 ```
 node dist/index.js
 ```
+<hr>
+
+Here are the [Command](https://github.com/MohamedAlabasy/Node.JS-Exam-System-CITC/blob/main/Command.txt) that were used in the project, You will find it in the project file.
