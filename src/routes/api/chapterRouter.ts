@@ -28,7 +28,7 @@ function checkID() {
 function checkCourseData() {
     return [
         check('name')
-            .isAlpha().withMessage('invalid name')
+            .isString().withMessage('invalid name')
             .custom(name => {
                 return Chapter.findOne({ name: name })
                     .then(nameData => {
