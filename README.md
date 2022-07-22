@@ -92,8 +92,6 @@ node run start
 
 `Step 5` : Open [postman](https://www.postman.com/downloads/) and import : [Database_collation](https://github.com/MohamedAlabasy/Node.JS-Exam-System-CITC/blob/main/Database_collation.json) You will find it in the project file.
 
-`Step 6` :  Download front-end React source code : 
-<h3 align="center">https://github.com/MohamedAlabasy/React-Exam-System</h3>
 <hr>
 
 To run eslint to check error
